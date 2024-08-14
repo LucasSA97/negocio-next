@@ -6,7 +6,7 @@ type CategoryIconPros = {
     category: Category
 }
 export default function CategoryIcon({
-  category
+category, params
 }: CategoryIconPros) {
   return (
     <div className={`flex items-center gap-4 w-full border-t border-rose-200 p-3 last-of-type:border-b`}>
