@@ -8,9 +8,18 @@ interface Store {
     
 }
 
-export const useStore = create<Store>(() => ({
+export const useStore = create<Store>((set) => ({
     order: [],
     addToOrder: (product) => {
 
+        const { categoryId, image, ...data} = product
+
+        set((state) => ({
+            order: [...state.order, {
+                ...data,
+                quantity: 1,
+                subTotal: 1* product.price
+            }]
+        }))
     }
 }))
