@@ -14,7 +14,7 @@ export default function OrderSumary() {
       <h1 className="text-2xl text-center font-semibold">Mi pedido</h1>
 
       {order.length === 0 ? 
-        <p className="text-center my-10 text-2xl">El carrito está vacio</p>
+        <p className="text-center my-10 text-2xl">El pedido está vacio</p>
         : ( 
         <div className="mt-5">
         {order.map((item) => (
@@ -26,6 +26,13 @@ export default function OrderSumary() {
         <p className="text-center mt-20 text-xl">Total: {''}
           <span className="font-semibold">{formatPrice(total)}</span>
         </p>
+        <form 
+        className="w-full mt-10 space-y-5 " 
+        action={'/order/checkout'}
+        >
+          <input type="submit" className="py-2 rounded uppercase  text-white bg-black w-full text-center cursor-pointer font-semibold" 
+          value='Confirmar' />
+        </form>
         
       </div>
       )} 
