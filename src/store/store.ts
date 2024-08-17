@@ -5,6 +5,7 @@ import { Product } from "@prisma/client";
 interface Store {
     order: OrderItem[];
     addToOrder: (product: Product) => void;
+    deleteToOrder: (id: Product['id']) => void;
     increaseQuantity: (id: Product['id']) => void;
     decreaseQuantity: (id: Product['id']) => void;
     
@@ -58,5 +59,10 @@ export const useStore = create<Store>((set, get ) => ({
             order
         }))
     },
+    deleteToOrder: (id) => {
+        set((state) => ({
+            order: state.order.filter(item => item.id !== id)
+        }))
+    }
 
 }))

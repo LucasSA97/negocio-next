@@ -12,6 +12,7 @@ export default function ProductDetail({item}: ProductDetailProps) {
 
     const increaseQuantity = useStore(state => state.increaseQuantity)
     const decreaseQuantity = useStore(state => state.decreaseQuantity)
+    const deleteToOrder = useStore(state => state.deleteToOrder)
     const disableDecreaseButton = useMemo(() => item.quantity === 1, [item])
 
   return (
@@ -22,9 +23,9 @@ export default function ProductDetail({item}: ProductDetailProps) {
 
         <button
           type="button"
-          onClick={() => {}}
+          onClick={() => {deleteToOrder(item.id) }}
         >
-          <XCircleIcon className="text-red-600 h-8 w-8"/>
+          <XCircleIcon className="text-red-600 h-8 w-8 "/>
         </button>
     </div>
     <p className="text-2xl text-amber-500 font-black">
