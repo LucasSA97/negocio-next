@@ -3,11 +3,16 @@ import { useStore } from "@/src/store/store"
 import ProductDetail from "./ProductDetail"
 import { formatPrice } from "@/src/utils"
 import { useMemo } from "react"
+import { createOrder } from "@/actions/create-order-action"
 
 export default function OrderSumary() {
 
   const order = useStore(state => state.order)
   const total = useMemo(() => order.reduce((total, item)=> total + (item.quantity * item.price), 0), [order])
+
+  const handleCreateOrder = () => {
+    createOrder()
+   }
 
   return (
     <aside className="lg:h-screen lg:overflow-y-scroll md:w-64 lg:w-96 p-5">
@@ -28,7 +33,7 @@ export default function OrderSumary() {
         </p>
         <form 
         className="w-full mt-10 space-y-5 " 
-        action={'/order/checkout'}
+        action={'handleCreateOrder'}
         >
           <input type="submit" className="py-2 rounded uppercase  text-white bg-black w-full text-center cursor-pointer font-semibold" 
           value='Confirmar' />
