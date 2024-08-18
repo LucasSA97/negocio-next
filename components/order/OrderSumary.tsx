@@ -10,7 +10,7 @@ export default function OrderSumary() {
   const order = useStore(state => state.order)
   const total = useMemo(() => order.reduce((total, item)=> total + (item.quantity * item.price), 0), [order])
 
-  const handleCreateOrder = () => {
+  const handleCreateOrder = (formData: FormData) => {
     createOrder()
    }
 
@@ -32,11 +32,21 @@ export default function OrderSumary() {
           <span className="font-semibold">{formatPrice(total)}</span>
         </p>
         <form 
-        className="w-full mt-10 space-y-5 " 
-        action={'handleCreateOrder'}
+          className="w-full mt-10 space-y-5 " 
+          action={handleCreateOrder}
         >
-          <input type="submit" className="py-2 rounded uppercase  text-white bg-black w-full text-center cursor-pointer font-semibold" 
-          value='Confirmar' />
+          <input 
+            type="text" 
+            placeholder="Nombre" 
+            className="bg-white border border-gray-100 w-full p-2"
+            name="name"
+            />
+          <input 
+            type="submit" 
+            className="py-2 rounded uppercase  text-white bg-black w-full text-center cursor-pointer font-semibold" 
+            value='Confirmar' 
+            
+            />
         </form>
         
       </div>
