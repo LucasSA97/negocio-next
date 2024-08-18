@@ -15,9 +15,8 @@ export default function OrderSumary() {
   const handleCreateOrder = async (formData: FormData) => {
     const data = {
       name: formData.get('name'),
-      total
-
-
+      total,
+      order
     }
 
     const result = OrderSchema.safeParse(data)
