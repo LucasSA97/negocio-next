@@ -1,8 +1,9 @@
 'use client'  
+import { useMemo } from "react"
 import { useStore } from "@/src/store/store"
+import { toast } from "react-toastify"
 import ProductDetail from "./ProductDetail"
 import { formatPrice } from "@/src/utils"
-import { useMemo } from "react"
 import { createOrder } from "@/actions/create-order-action"
 import { OrderSchema } from "@/src/schema"
 
@@ -18,6 +19,11 @@ export default function OrderSumary() {
     }
 
     const result = OrderSchema.safeParse(data)
+    if(!result.success) {
+      result.error.issues.forEach((issue) => {
+       toast.error(issue.message) 
+      })
+    }
 
     return
 
