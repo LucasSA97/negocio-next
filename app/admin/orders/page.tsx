@@ -1,10 +1,27 @@
 import Header from '@/components/ui/Header'
-import React from 'react'
+import { prisma } from '@/src/lib/prisma'
 
-export default function OrdersPage() {
+async function getPendingOrders() {
+  const orders = await prisma.order.findMany({
+    where: {
+      status: false,
+    },
+    include: {
+      orderProducts: {
+        include: {
+          product: true, 
+        }
+      }
+    }
+  })
+  return orders
+}
+export default async function OrdersPage() {
+  const orders = await getPendingOrders()
+  
   return (
     <>
       <Header>Administrar Ordenes</Header>
     </>
-  )
+  ) 
 }
