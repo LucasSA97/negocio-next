@@ -7,7 +7,7 @@ export default function Logo() {
             <Image 
             fill 
             alt='Logotipo'
-            src='../../public/logo.svg' />
+            src='/logo.svg' />
         </div>
     </div>
   )
