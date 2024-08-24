@@ -1,5 +1,4 @@
 import Image from 'next/image'
-import React from 'react'
 
 export default function Logo() {
   return (
@@ -8,7 +7,7 @@ export default function Logo() {
             <Image 
             fill 
             alt='Logotipo'
-            src='/public/logo.svg' />
+            src='../../public/logo.svg' />
         </div>
     </div>
   )
