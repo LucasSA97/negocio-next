@@ -1,9 +1,7 @@
 import Pagination from "@/components/products/Pagination"
 import ProductTable from "@/components/products/ProductsTable"
 import Header from "@/components/ui/Header"
-import ToastNotification from "@/components/ui/ToastNotification"
 import { prisma } from "@/src/lib/prisma"
-import { products } from '../../../prisma/data/products';
 
 async function productCount() {
   return await prisma.product.count()
@@ -37,6 +35,7 @@ export default async function ProductsPage({searchParams} : {searchParams: { pag
     productsData,
     totalProductsData
   ])
+  const totalPages = Math.ceil(totalProducts / pageSize)
   
   return (
     <>
@@ -45,7 +44,10 @@ export default async function ProductsPage({searchParams} : {searchParams: { pag
       <ProductTable 
           products={products} 
           />
-      <Pagination page={page} />    
+      <Pagination 
+      page={page} 
+      totalPages={totalPages}
+        />    
     </>
 
   )
