@@ -19,6 +19,7 @@ export default function Pagination({page, totalPages} : ProductsPaginationProps)
 
         {pages.map(currentPage => (
             <Link
+            key={currentPage}
             className={`${page === currentPage && 'font-black bg-amber-300'} bg-white p-4 py-2 text-base font-medium text-gray-900 ring-1 ring-inset ring-gray-300  hover:bg-slate-200 focus:z-20 focus:outline-offset-0`}
             href={`/admin/products?page=${currentPage}`} >
                 {currentPage}
