@@ -1,5 +1,5 @@
 'use client'
-import { searchSchema } from "@/src/schema"
+import { SearchSchema } from "@/src/schema"
 import { redirect, useRouter } from "next/navigation"
 import { toast } from "react-toastify"
 
@@ -11,9 +11,9 @@ export default function SearchProduct() {
         search: formData.get('search')
       }
 
-      const result = searchSchema.safeParse(data)
+      const result = SearchSchema.safeParse(data)
       if(!result.success) {
-        result.error.issues.forEach((issue) => {
+        result.error.issues.forEach(issue => {
           toast.error(issue.message)
         })
         return
@@ -24,7 +24,10 @@ export default function SearchProduct() {
   }
 
   return (
-    <form className='flex items-center' action={handleSearchAction}>
+    <form 
+      className='flex items-center' 
+      action={handleSearchAction}>
+
         <input type="text" placeholder='Buscar producto' className='bg-gray-300 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5'
         name='search'  />
         <input type="submit"
