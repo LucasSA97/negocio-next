@@ -19,7 +19,7 @@ export default function AddProductForm({children}: {children: React.ReactNode}) 
           })
         }
 
-        
+
     }
 
   return (
@@ -42,3 +42,4 @@ export default function AddProductForm({children}: {children: React.ReactNode}) 
     </div>
   )
 }
+
