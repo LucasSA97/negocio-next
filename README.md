@@ -67,6 +67,7 @@ Linting
 Este proyecto utiliza ESLint para mantener la calidad del código. Puedes correr el linter con:
 
 bash
+Copiar código
 npm run lint
 # o
 yarn lint
@@ -92,16 +93,19 @@ Prisma y Base de Datos
 Este proyecto usa Prisma como ORM. Asegúrate de configurar correctamente la base de datos en tu archivo .env:
 
 env
+Copiar código
 DATABASE_URL="postgresql://user:password@localhost:5432/mydb?schema=public"
 Migraciones
 Para aplicar las migraciones de base de datos, utiliza:
 
 bash
+Copiar código
 npx prisma migrate dev
 Seed de Datos
 Puedes poblar la base de datos con datos iniciales usando:
 
 bash
+Copiar código
 npm run prisma:seed
 Despliegue
 El proyecto puede ser desplegado fácilmente utilizando Vercel, la plataforma de hosting para Next.js. Sigue los pasos de la documentación oficial de Next.js para desplegar tu aplicación.
