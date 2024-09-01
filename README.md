@@ -27,89 +27,62 @@ Negocio Next.js es una aplicación web construida utilizando [Next.js](https://n
    git clone https://github.com/tu-usuario/negocio-next.git
    cd negocio-next
 Instala las dependencias:
+npm install o yarn install
 
-bash
-npm install
-# o
-yarn install
-Configura la base de datos con Prisma:
+2. Configura la base de datos con Prisma:
 
-bash
 npx prisma migrate dev --name init
-(Opcional) Ejecuta el script de seed para poblar la base de datos con datos iniciales:
+(Opcional) Ejecuta el script de seed para poblar la base de datos con datos:
 
-bash
 npm run prisma:seed
-Uso
-Desarrollo
-Para iniciar el servidor de desarrollo, usa el siguiente comando:
 
-bash
-npm run dev
-# o
-yarn dev
+3. Para iniciar prisma: 
+npx prisma studio
+
+4. Para iniciar el servidor de desarrollo, usa el siguiente comando:
+
+npm run dev o yarn dev
 Esto abrirá el servidor en http://localhost:3000.
 
-Construcción y Despliegue
-Para construir la aplicación para producción:
+5. Construcción y Despliegue
+npm run build o yarn build
 
-bash
-npm run build
-# o
-yarn build
-Luego, puedes iniciar la aplicación usando:
-
-bash
-npm start
-# o
-yarn start
-Linting
+## Linting
 Este proyecto utiliza ESLint para mantener la calidad del código. Puedes correr el linter con:
 
-bash
-Copiar código
-npm run lint
-# o
-yarn lint
+npm run lint o yarn lint
 
-Estructura del Proyecto
+## Estructura del Proyecto
 
-actions/: Contiene las acciones específicas del proyecto, como funciones que ejecutan lógica específica relacionada con la aplicación.
-app/: Directorio raíz para las páginas y rutas de la aplicación. Este directorio utiliza el sistema de enrutamiento de Next.js.
-components/: Componentes reutilizables de la UI. Está subdividido en:
-admin/: Componentes específicos para la interfaz de administración.
-order/: Componentes relacionados con la gestión de órdenes.
-products/: Componentes relacionados con la gestión y visualización de productos.
-ui/: Componentes generales de la interfaz de usuario (botones, formularios, etc.).
-lib/: Contiene módulos o utilidades comunes que no están directamente relacionadas con la UI, como funciones helper o configuraciones.
-prisma/: Archivos relacionados con la configuración de la base de datos, incluyendo esquemas y seeds.
-public/: Archivos estáticos como imágenes, íconos, fuentes, etc.
-schema/: Define los esquemas de validación y tipos utilizando zod u otras herramientas de validación.
-src/: Contiene la lógica principal del proyecto, incluyendo el código fuente no directamente relacionado con la UI.
-store/: Contiene el estado global de la aplicación utilizando zustand.
-types/: Definiciones de tipos TypeScript para mejorar la consistencia y evitar errores.
-utils/: Utilidades y funciones comunes que se pueden reutilizar en diferentes partes del proyecto.
+**actions/:** Contiene las acciones específicas del proyecto, como funciones que ejecutan lógica específica relacionada con la aplicación.
+**app/:** Directorio raíz para las páginas y rutas de la aplicación. Este directorio utiliza el sistema de enrutamiento de Next.js.
+**components/:** Componentes reutilizables de la UI. Está subdividido en:
+**admin/:** Componentes específicos para la interfaz de administración.
+**order/:** Componentes relacionados con la gestión de órdenes.
+**products/:** Componentes relacionados con la gestión y visualización de productos.
+**ui/:** Componentes generales de la interfaz de usuario (botones, formularios, etc.).
+**lib/:** Contiene módulos o utilidades comunes que no están directamente relacionadas con la UI, como funciones helper o configuraciones.
+**prisma/:** Archivos relacionados con la configuración de la base de datos, incluyendo esquemas y seeds.
+**public/:** Archivos estáticos como imágenes, íconos, fuentes, etc.
+**schema/:** Define los esquemas de validación y tipos utilizando zod u otras herramientas de validación.
+**src/:** Contiene la lógica principal del proyecto, incluyendo el código fuente no directamente relacionado con la UI.
+**store/:** Contiene el estado global de la aplicación utilizando zustand.
+**types/:** Definiciones de tipos TypeScript para mejorar la consistencia y evitar errores.
+**utils/:** Utilidades y funciones comunes que se pueden reutilizar en diferentes partes del proyecto.
 
 
-Prisma y Base de Datos
+## Prisma y Base de Datos
 Este proyecto usa Prisma como ORM. Asegúrate de configurar correctamente la base de datos en tu archivo .env:
 
-env
-Copiar código
-DATABASE_URL="postgresql://user:password@localhost:5432/mydb?schema=public"
-Migraciones
+**Migraciones**
 Para aplicar las migraciones de base de datos, utiliza:
-
-bash
-Copiar código
 npx prisma migrate dev
-Seed de Datos
-Puedes poblar la base de datos con datos iniciales usando:
 
-bash
-Copiar código
+**Seed de Datos**
+Puedes poblar la base de datos con datos iniciales usando:
 npm run prisma:seed
-Despliegue
+
+**Despliegue**
 El proyecto puede ser desplegado fácilmente utilizando Vercel, la plataforma de hosting para Next.js. Sigue los pasos de la documentación oficial de Next.js para desplegar tu aplicación.
 
 Contribuciones

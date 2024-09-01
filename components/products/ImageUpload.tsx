@@ -22,7 +22,7 @@ export default function ImageUpload() {
       
         {({open}) => (
             <>
-                <div className="space-y-2">
+                <div className="space-y-3">
 
                     <label className="text-slate-800">Imagen Producto</label>
                     <div 
