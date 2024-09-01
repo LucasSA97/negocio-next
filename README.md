@@ -71,8 +71,8 @@ Copiar código
 npm run lint
 # o
 yarn lint
+
 Estructura del Proyecto
-A continuación se describe la estructura principal del proyecto y su propósito:
 
 actions/: Contiene las acciones específicas del proyecto, como funciones que ejecutan lógica específica relacionada con la aplicación.
 app/: Directorio raíz para las páginas y rutas de la aplicación. Este directorio utiliza el sistema de enrutamiento de Next.js.
@@ -89,6 +89,8 @@ src/: Contiene la lógica principal del proyecto, incluyendo el código fuente n
 store/: Contiene el estado global de la aplicación utilizando zustand.
 types/: Definiciones de tipos TypeScript para mejorar la consistencia y evitar errores.
 utils/: Utilidades y funciones comunes que se pueden reutilizar en diferentes partes del proyecto.
+
+
 Prisma y Base de Datos
 Este proyecto usa Prisma como ORM. Asegúrate de configurar correctamente la base de datos en tu archivo .env:
 
