@@ -23,28 +23,26 @@ Negocio Next.js es una aplicación web construida utilizando [Next.js](https://n
 
 1. Clona el repositorio:
 
-   ```bash
-   git clone https://github.com/tu-usuario/negocio-next.git
-   cd negocio-next
-Instala las dependencias:
+2. cd negocio-next
+3. Instala las dependencias:
 npm install o yarn install
 
-2. Configura la base de datos con Prisma:
+4. Configura la base de datos con Prisma:
 
 npx prisma migrate dev --name init
 (Opcional) Ejecuta el script de seed para poblar la base de datos con datos:
 
 npm run prisma:seed
 
-3. Para iniciar prisma: 
+5. Para iniciar prisma: 
 npx prisma studio
 
-4. Para iniciar el servidor de desarrollo, usa el siguiente comando:
+6. Para iniciar el servidor de desarrollo, usa el siguiente comando:
 
 npm run dev o yarn dev
 Esto abrirá el servidor en http://localhost:3000.
 
-5. Construcción y Despliegue
+7. Construcción y Despliegue
 npm run build o yarn build
 
 ## Linting
@@ -54,21 +52,50 @@ npm run lint o yarn lint
 
 ## Estructura del Proyecto
 
-**actions/:** Contiene las acciones específicas del proyecto, como funciones que ejecutan lógica específica relacionada con la aplicación.
-**app/:** Directorio raíz para las páginas y rutas de la aplicación. Este directorio utiliza el sistema de enrutamiento de Next.js.
-**components/:** Componentes reutilizables de la UI. Está subdividido en:
-**admin/:** Componentes específicos para la interfaz de administración.
-**order/:** Componentes relacionados con la gestión de órdenes.
-**products/:** Componentes relacionados con la gestión y visualización de productos.
-**ui/:** Componentes generales de la interfaz de usuario (botones, formularios, etc.).
-**lib/:** Contiene módulos o utilidades comunes que no están directamente relacionadas con la UI, como funciones helper o configuraciones.
-**prisma/:** Archivos relacionados con la configuración de la base de datos, incluyendo esquemas y seeds.
-**public/:** Archivos estáticos como imágenes, íconos, fuentes, etc.
-**schema/:** Define los esquemas de validación y tipos utilizando zod u otras herramientas de validación.
-**src/:** Contiene la lógica principal del proyecto, incluyendo el código fuente no directamente relacionado con la UI.
-**store/:** Contiene el estado global de la aplicación utilizando zustand.
-**types/:** Definiciones de tipos TypeScript para mejorar la consistencia y evitar errores.
-**utils/:** Utilidades y funciones comunes que se pueden reutilizar en diferentes partes del proyecto.
+**actions/:** 
+Contiene las acciones específicas del proyecto, como funciones que ejecutan lógica específica relacionada con la aplicación.
+
+**app/:** 
+Directorio raíz para las páginas y rutas de la aplicación. Este directorio utiliza el sistema de enrutamiento de Next.js.
+
+**components/:** 
+Componentes reutilizables de la UI. Está subdividido en:
+
+**admin/:**
+ Componentes específicos para la interfaz de administración.
+
+**order/:** 
+Componentes relacionados con la gestión de órdenes.
+
+**products/:** 
+Componentes relacionados con la gestión y visualización de productos.
+
+**ui/:** 
+Componentes generales de la interfaz de usuario (botones, formularios, etc.).
+
+**lib/:** 
+Contiene módulos o utilidades comunes que no están directamente relacionadas con la UI, como funciones helper o configuraciones.
+
+**prisma/:** 
+Archivos relacionados con la configuración de la base de datos, incluyendo esquemas y seeds.
+
+**public/:** 
+Archivos estáticos como imágenes, íconos, fuentes, etc.
+
+**schema/:** 
+Define los esquemas de validación y tipos utilizando zod u otras herramientas de validación.
+
+**src/:** 
+Contiene la lógica principal del proyecto, incluyendo el código fuente no directamente relacionado con la UI.
+
+**store/:** 
+Contiene el estado global de la aplicación utilizando zustand.
+
+**types/:** 
+Definiciones de tipos TypeScript para mejorar la consistencia y evitar errores.
+
+**utils/:** 
+Utilidades y funciones comunes que se pueden reutilizar en diferentes partes del proyecto.
 
 
 ## Prisma y Base de Datos
@@ -85,13 +112,16 @@ npm run prisma:seed
 **Despliegue**
 El proyecto puede ser desplegado fácilmente utilizando Vercel, la plataforma de hosting para Next.js. Sigue los pasos de la documentación oficial de Next.js para desplegar tu aplicación.
 
-Contribuciones
+## Contribuciones
 Las contribuciones son bienvenidas. Por favor, sigue los pasos descritos a continuación para contribuir:
 
-Haz un fork del proyecto.
-Crea una nueva rama (git checkout -b feature/nueva-caracteristica).
-Realiza tus cambios y haz un commit (git commit -m 'Añadir nueva característica').
-Sube tu rama (git push origin feature/nueva-caracteristica).
-Abre un Pull Request.
-Licencia
+**Haz un fork del proyecto.**
+**Crea una nueva rama** 
+(git checkout -b feature/nueva-caracteristica).
+**Realiza tus cambios y haz un commit** 
+(git commit -m 'Añadir nueva característica').
+**Sube tu rama** 
+(git push origin feature/nueva-caracteristica).
+**Abre un Pull Request.**
+**Licencia**
 Este proyecto está bajo la licencia MIT.
