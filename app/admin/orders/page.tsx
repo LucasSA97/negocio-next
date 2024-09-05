@@ -1,9 +1,7 @@
 'use client'
 import OrderCard from '@/components/order/OrderCard'
 import Header from '@/components/ui/Header'
-import { prisma } from '@/src/lib/prisma'
 import { OrderWithProducts } from '@/src/types'
-import { revalidatePath } from 'next/cache'
 import useSWR from 'swr'
 
 
@@ -12,8 +10,8 @@ export default  function OrdersPage() {
   const url = '/admin/orders/api'
   const fetcher = () => fetch(url).then(res => res.json()).then(data => data)
   const { data, error, isLoading} = useSWR<OrderWithProducts[]>(url, fetcher, {
-    refreshInterval: 10000,
-    revalidateOnFocus: false
+    refreshInterval: 30000,
+    revalidateOnFocus: true
   })
 
   if(isLoading) return <p>Cargando...</p>
